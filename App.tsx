@@ -1,45 +1,32 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
+import ThemeProvider from './src/theme/ThemeProvider'
+import ToastManager from 'toastify-react-native/components/ToastManager'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import AppNavigation from './src/navigation/stack'
+import { persistor, store } from './src/store/store'
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
-
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
+const App = () => {
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
-  );
+    // <Provider store={store}>
+    // <PersistGate loading={null} persistor={persistor}>
+    <ThemeProvider>
+      <GestureHandlerRootView style={styles.container}>
+        <AppNavigation />
+        <ToastManager />
+      </GestureHandlerRootView>
+    </ThemeProvider>
+    // </PersistGate>
+    // </Provider>
+  )
 }
 
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
-
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
-  );
-}
+export default App
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
-});
-
-export default App;
+})
