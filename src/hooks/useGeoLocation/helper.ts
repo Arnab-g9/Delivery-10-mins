@@ -1,7 +1,7 @@
 import { Linking, Platform } from 'react-native';
-import Geolocation from 'react-native-geolocation-service';
 import { checkLocationAccuracy, checkMultiple, Permission, PERMISSIONS, PermissionStatus, requestMultiple, RESULTS } from 'react-native-permissions';
 import AsyncStorage from '@react-native-community/async-storage';
+import Geolocation from "react-native-geolocation-service"
 
 export const fallBackLocationConfig = {
     latitude: 37.78825,

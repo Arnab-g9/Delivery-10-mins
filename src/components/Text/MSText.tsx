@@ -1,5 +1,5 @@
 import { Text, TextProps } from 'react-native'
-import React, { ReactNode } from 'react'
+import  { ReactNode } from 'react'
 import { getFontFamily } from '../../utils/getFontFamily'
 
 interface props extends TextProps {

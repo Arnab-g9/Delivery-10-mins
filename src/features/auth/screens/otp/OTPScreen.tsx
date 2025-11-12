@@ -9,7 +9,7 @@ import { useTheme } from '../../../../theme/ThemeProvider';
 import { useStyles } from './OTPScreen.styles';
 import TextWithLinkButton from '../../../../components/Button/TextWithLinkButton/TextWithLinkButton';
 import PrimaryButton from '../../../../components/Button/PrimaryButton/PrimaryButton';
-import { ScreenNames } from '../../../../navigation/stack/constants';
+import { ScreenNames } from '../../../../navigation/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../../store/store';
 import { postData } from '../../../../api/api';

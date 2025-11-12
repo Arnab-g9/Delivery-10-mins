@@ -7,7 +7,7 @@ import PrimaryButton from '../../../../components/Button/PrimaryButton/PrimaryBu
 import { default as Text } from '../../../../components/Text/MSText';
 import TextWithLinkButton from '../../../../components/Button/TextWithLinkButton/TextWithLinkButton'
 import { useNavigation } from '@react-navigation/native'
-import { ScreenNames } from '../../../../navigation/stack/constants'
+import { ScreenNames } from '../../../../navigation/constants'
 
 
 const LoginScreen = () => {
@@ -15,7 +15,7 @@ const LoginScreen = () => {
     const styles = useStyles(colors);
     const navigation = useNavigation();
     const handlePrimaryCtaPress = () => {
-        navigation.navigate(ScreenNames.DASHBOARD_SCREEN as never);
+        navigation.navigate(ScreenNames.HOME_SCREEN as never);
     }
     const handleLinkBtnPress = () => {
         console.log("link button pressed ===>");

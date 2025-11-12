@@ -7,14 +7,25 @@ import { useNavigation } from '@react-navigation/native'
 import OrderCard from '../../components/Card/OrderCard/OrderCard'
 import { default as Text } from '../../../../components/Text/MSText'
 import Header from '../../components/Header/Header'
+import WalletIcon from "react-native-vector-icons/AntDesign"
+import { ScreenNames } from '../../../../navigation/constants'
 
 const DashboardScreen = () => {
     const { colors } = useTheme();
     const styles = useStyles(colors);
     const navigation = useNavigation();
+
+    const handlePressViewAll = () => {
+        navigation.navigate(ScreenNames.RUNNING_ORDERS as never);
+    }
+
+    const handlePressNotification = () => {
+        navigation.navigate(ScreenNames.NOTIFICATION_SCREEN as never);
+    }
+
     useEffect(() => {
         const renderAppHeader = () => (
-            <Header />
+            <Header onPressNotification={handlePressNotification} />
         );
         navigation.setOptions({
             headerShown: true,
@@ -26,7 +37,7 @@ const DashboardScreen = () => {
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.contentContainerStyle}>
                 <View style={styles.header}>
                     <Text>Active Order</Text>
-                    <Text style={styles.viewAll}>View All</Text>
+                    <Text style={styles.viewAll} onPress={handlePressViewAll}>View All</Text>
                 </View>
                 <OrderCard />
                 {/* Earnings section */}
@@ -36,7 +47,8 @@ const DashboardScreen = () => {
                         {/* upper section */}
                         <View style={{ flexDirection: "row", gap: 20, alignContent: "center" }}>
                             <View>
-                                <Text>icon</Text>
+                                <Text varient='bold'>icon</Text>
+                                <WalletIcon name={"wallet"} size={20} />
                             </View>
                             <View style={{ gap: 10 }}>
                                 <Text>Balance</Text>

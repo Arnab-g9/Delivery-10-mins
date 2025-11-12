@@ -13,5 +13,19 @@ export const useStyles = (colors: ColorsType) => StyleSheet.create({
     },
     title: {
         fontSize: 16
-    }
+    },
+    circleStyle: {
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    iconsContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        gap: 20,
+    },
+    // switchWrapper: {},
+    switchText: {
+        fontSize: 11,
+        fontWeight: '600',
+    },
 })

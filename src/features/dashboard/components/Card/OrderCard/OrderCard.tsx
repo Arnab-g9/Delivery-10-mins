@@ -5,17 +5,22 @@ import { useStyles } from './Ordercard.styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {default as Text} from "../../../../../components/Text/MSText"
 import UserIcon from "react-native-vector-icons/FontAwesome"
-import LocationIcon from "react-native-vector-icons/Ionicons"
+import LocationIcon from "react-native-vector-icons/Entypo"
 import PrimaryButton from '../../../../../components/Button/PrimaryButton/PrimaryButton';
 import OutlineButton from '../../../../../components/Button/OutlineButton/OutlineButton';
+import { useNavigation } from '@react-navigation/native';
+import { ScreenNames } from '../../../../../navigation/constants';
 const OrderCard = () => {
     const { colors } = useTheme();
     const styles = useStyles(colors);
+    const navigation = useNavigation();
 
     const handlePressDetails = ()=>{
 
     }
-    const handlePressDirection = ()=>{}
+    const handlePressDirection = ()=>{
+        // navigation.navigate(ScreenNames.DASHBOARD_SCREEN as never);
+    }
     return (
         <View style={styles.container}>
             <View style={styles.orderIdAndPayOptionContainer}>
@@ -26,7 +31,7 @@ const OrderCard = () => {
                 <Text>Store Location</Text>
             </View>
             <View style={styles.row}>
-                <LocationIcon name={"location"} size={20}/>
+                <LocationIcon name={"location-pin"} size={20}/>
                 <Text>House: 00, Road:00, Test City</Text>
             </View>
             <View style={[styles.row, {marginTop: 20}]}>
