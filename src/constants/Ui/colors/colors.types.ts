@@ -14,6 +14,8 @@ export type ColorsType = {
 
   // card background
   card_bg_primary: string;
+  card_bg_secondary: string,
+
 
   // buttons
   // disabledPrimaryButton: string

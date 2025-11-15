@@ -34,15 +34,19 @@ export const useStyles = (colors: ColorsType) => StyleSheet.create({
         alignItems: "center",
         gap: 10
     },
-    green: {
-        backgroundColor: "green"
+    black: {
+        backgroundColor: colors.card_bg_secondary
     },
-    pink: {
+    red: {
         backgroundColor: colors.primary
     },
     cardTitle: {
         fontSize: 20,
         color: colors.primaryCtaText
+    },
+    cardTitleSecondary: {
+        fontSize: 20,
+        color: colors.contentPrimary
     },
     orderSection: {
         marginTop: 16,
@@ -52,10 +56,23 @@ export const useStyles = (colors: ColorsType) => StyleSheet.create({
         height: 150,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "green",
+        backgroundColor: colors.primaryCtaText,
         marginTop: 10,
         borderRadius: 5,
-        gap: 10
+        gap: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
+        margin: 2
+    },
+    blackFullcard: {
+        backgroundColor: colors.card_bg_secondary
     },
     earningsSection: {
         marginTop: 16,
@@ -63,7 +80,29 @@ export const useStyles = (colors: ColorsType) => StyleSheet.create({
     },
     earningCard: {
         padding: 20,
-        backgroundColor: "green",
+        backgroundColor: colors.primary,
         borderRadius: 5,
+    },
+    earningCardHeader: {
+        flexDirection: "row", gap: 20, alignContent: "center",
+    },
+    balanceContainer: {
+        gap: 5
+    },
+    earningCardCommonText: {
+        fontSize: 16, color: colors.primaryCtaText,
+        fontWeight: '700',
+    },
+    balanceText: {
+        fontSize: 24
+    },
+    earningContainerSection: {
+        flexDirection: "row", alignItems: "center", marginTop: 40
+    },
+    box: {
+        gap: 10, flex: 1, justifyContent: "center", alignItems: "center", borderRightWidth: 1, borderColor: colors.primaryCtaText
+    },
+    boxWithoutBorder: {
+        gap: 10, flex: 1, justifyContent: "center", alignItems: "center"
     }
 });

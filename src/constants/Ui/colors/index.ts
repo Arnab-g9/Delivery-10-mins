@@ -17,6 +17,7 @@ export const lightColors: ColorsType = {
 
     // card background
     card_bg_primary: '#FFFFFF',
+    card_bg_secondary: "#000000",
 
 
     // texts
@@ -82,6 +83,8 @@ export const darkColors: ColorsType = {
 
     // card-background
     card_bg_primary: '#37353E',
+    card_bg_secondary: "#000000",
+
 
 
     // texts
@@ -104,7 +107,7 @@ export const darkColors: ColorsType = {
     // border_4: '#A9A9A9',
     // border_5: '#DCE4EA',
 
-       // shadow color
+    // shadow color
     primaryShadow: '#ff0b0bff',
 
 
